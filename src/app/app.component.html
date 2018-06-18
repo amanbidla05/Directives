@@ -1,0 +1,49 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12"
+     *ngIf="cake"
+    [ngClass]="{cake: cake}"
+    [ngStyle]="{backgroundColor: cake ? 'yellow' : 'red'}">
+      <h1>Recipe of Cake</h1>
+      <p>Preheat the oven to 180 degrees C. Grease and flour a 23cm tin or line a bun tray with paper cases. In a medium bowl, cream together the sugar and butter. Beat in the eggs, one at a time, then stir in the vanilla. Combine flour and baking powder, add to the creamed mixture and mix well.</p>
+    </div>
+  </div>
+</div>
+<button class="btn btn-primary" (click)="onSubmit()">Click for Cake Recipe!</button>
+<hr>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xs-12"
+     *ngIf="pizza"
+    [ngClass]="{pizza: pizza}"
+    [ngStyle]="{backgroundColor: pizza ? 'black' : 'transperent'}">
+      <h1>Recipe of Pizza</h1>
+      <p>Preheat oven and a baking sheet to 220C/fan 200C.
+        Mix strong bread flour, salt and fast-action yeast together in a large bowl. Quickly stir in lukewarm water and olive oil and bring together to a rough dough.
+        Tip out the mixture onto a lightly floured worksurface and knead for 5 mins until you have a smooth, springy dough.
+        Roll out into a thin round (you may have to stretch it with your hands a little) and place on a floured baking sheet.
+        Add your favourite toppings (such as tomato passata, mozzarella, vegetables or cured meats), place the floured sheet on top of the preheated sheet and bake for 10-15 mins, until the pizza is golden and crispy.
+        </p>
+    </div>
+  </div>
+</div>
+<button class="btn btn-primary" (click)="onPizza()">Click for Pizza!</button>
+<hr>
+<div class="container-fluid">
+  <h1>NG FOR</h1>
+  <div *ngFor="let lan of myFavLang; let i = index">
+    <li>{{i}}.{{lan.name}} -- {{lan.type}}</li>
+  </div>
+</div>
+<div class="container-fluid ">
+  <p appHighlight>Style with Highligth Directive</p>
+  <p appBetterhighlight>Style with Renderer2</p>
+</div>
+<div [ngSwitch]="somevalue">
+  <p *ngSwitchCase="1">This is one</p>
+  <p *ngSwitchCase="2">This is Two</p>
+</div>
+<div [ngSwitch]="somevalue1">
+    <p *ngSwitchCase="'one'">This is one-one</p>
+    <p *ngSwitchCase="'two'">This is Two-two</p>
+  </div>
